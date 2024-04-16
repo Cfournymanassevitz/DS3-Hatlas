@@ -1,0 +1,9 @@
+#map { 
+    height: 800px; 
+    margin: 20 auto; 
+}
+
+.custom-popup .leaflet-popup-content {
+    max-height: 300px;
+    overflow-y: auto;
+  }
