@@ -1,5 +1,7 @@
 #map { 
-    height: 800px; 
+    height: 500px;
+    width: 80%;
+    display: flex;
     margin: 20 auto; 
 }
 
