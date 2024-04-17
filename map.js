@@ -13,6 +13,7 @@ export class Map {
         this.refueling = L.layerGroup();
         this.offtake = L.layerGroup();
         this.offtakeOthers = L.layerGroup();
+        this.markersData = [];
 
         var overlayMaps = {
             "Production": this.production,
@@ -57,7 +58,7 @@ export class Map {
             console.error(`Valeur de latitude ou de longitude invalide : (${data['ASSET_LOCATION_GPS-LATITUDE']}, ${data['ASSET_LOCATION_GPS-LONGITUDE']})`);
             return;
         }
-
+        this.markersData.push(data);
         var popupContent = `
             <center><strong>${data['ASSET_UNIT_NAME']}</strong><br></center>
             <strong>Project:</strong><br> ${data['ASSET_UNIT_PROJECT']}<br>
@@ -106,23 +107,10 @@ export class Map {
                 break;
         }
     }
-}
-
-function addMarker(data) {
-    var latitude = data['ASSET_LOCATION_GPS-LATITUDE'];
-    var longitude = data['ASSET_LOCATION_GPS-LONGITUDE'];
-    var segment = data['ASSET_VALUECHAIN_SEGMENT2'].toLowerCase();
-    var iconUrl = getIcon(segment);
-    if (isNaN(latitude) || isNaN(longitude)) {
-        console.error(`Valeur de latitude ou de longitude invalide : (${data['ASSET_LOCATION_GPS-LATITUDE']}, ${data['ASSET_LOCATION_GPS-LONGITUDE']})`);
-        return;
+    filterMarkers(segment) {
+        let filteredData = this.markersData.filter(data => data['ASSET_VALUECHAIN_SEGMENT2'].toLowerCase() === segment);
+        let event = new CustomEvent('filter', { detail: filteredData });
+        document.dispatchEvent(event);
     }
+
 };
-
-
-
-
-
-
-
-
