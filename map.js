@@ -109,9 +109,14 @@ export class Map {
     }
     filterMarkers(segment) {
         let filteredData = this.markersData.filter(data => {
-            let latitude = data['ASSET_LOCATION_GPS-LATITUDE'];
-            let longitude = data['ASSET_LOCATION_GPS-LONGITUDE'];
-            return data['ASSET_VALUECHAIN_SEGMENT2'].toLowerCase() === segment;
+            let dataSegment = data['ASSET_VALUECHAIN_SEGMENT2'].toLowerCase();
+            if (segment === 'Offtake (others)') {
+                // Filtrer les données pour les segments 'Offtake (Mobility)' et 'Offtake (others)'
+                // faire le offtakeOthers car non fonctionnel
+                return dataSegment === ' '|| dataSegment === 'offtake (others);
+            } else {
+                return dataSegment === segment;
+            }
         });
         let event = new CustomEvent('filter', { detail: filteredData });
         document.dispatchEvent(event);
