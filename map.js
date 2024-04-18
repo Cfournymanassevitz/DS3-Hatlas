@@ -108,9 +108,15 @@ export class Map {
         }
     }
     filterMarkers(segment) {
-        let filteredData = this.markersData.filter(data => data['ASSET_VALUECHAIN_SEGMENT2'].toLowerCase() === segment);
+        let filteredData = this.markersData.filter(data => {
+            let latitude = data['ASSET_LOCATION_GPS-LATITUDE'];
+            let longitude = data['ASSET_LOCATION_GPS-LONGITUDE'];
+            return data['ASSET_VALUECHAIN_SEGMENT2'].toLowerCase() === segment;
+        });
         let event = new CustomEvent('filter', { detail: filteredData });
         document.dispatchEvent(event);
+        console.log('je rentre dans filterMarkers');
     }
+
 
 };

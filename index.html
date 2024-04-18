@@ -9,27 +9,30 @@
   </head>
   <body>
     <div id="map"></div>
-    <!-- Dans votre fichier HTML -->
-    <table id="data-table">
-      <thead>
-      <tr>
-        <th>ASSET_UNIT_NAME</th>
-        <th>ASSET_UNIT_PROJECT</th>
-        <th>ASSET_STATUS_ACTIVITY</th>
-        <th> ASSET_VALUECHAIN_SEGMENT2 </th>
-        <th>ASSET_STATUS_LIFECYCLE1</th>
-        <th>ASSET_OWNERSHIP_PROMOTER</th>
-        <th>ASSET_UNIT_SCOPE</th>
-        <th>ASSET_CAPACITY_YEAR  </th>
-        <th>ASSET_CARBON_INTENSITY</th>
-        <th>ASSET_LOCATION_GPS-ACCURACY</th>
-        <!-- Ajoutez d'autres colonnes selon vos données -->
-      </tr>
-      </thead>
-      <tbody>
-      <!-- Les lignes de données seront ajoutées ici par JavaScript -->
-      </tbody>
+
+    <div class="tableau">
+      <!-- Dans votre fichier HTML -->
+      <table id="data-table">
+        <thead>
+        <tr>
+          <th>ASSET_UNIT_NAME</th>
+          <th>ASSET_UNIT_PROJECT</th>
+          <th>ASSET_STATUS_ACTIVITY</th>
+          <th> ASSET_VALUECHAIN_SEGMENT2 </th>
+          <th>ASSET_STATUS_LIFECYCLE1</th>
+          <th>ASSET_OWNERSHIP_PROMOTER</th>
+          <th>ASSET_UNIT_SCOPE</th>
+          <th>ASSET_CAPACITY_YEAR  </th>
+          <th>ASSET_CARBON_INTENSITY</th>
+          <th>ASSET_LOCATION_GPS-ACCURACY</th>
+          <!-- Ajoutez d'autres colonnes selon vos données -->
+        </tr>
+        </thead>
+        <tbody id="data-table-body">
+        <!-- Les lignes de données seront ajoutées ici par JavaScript -->
+        </tbody>
     </table>
+    </div>
     <script type="module" src="script.js"></script>
   </body>
 </html>

@@ -51,14 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Erreur lors de la récupération du fichier JSON:', error));
 
     document.addEventListener('filter', function (event) {
+        var dataTableBody = document.getElementById('data-table-body');
         // Effacer le tableau
-        while (dataTable.rows.length > 0) {
-            dataTable.deleteRow(0);
+        while (dataTableBody.rows.length > 0) {
+            dataTableBody.deleteRow(0);
         }
 
         // Ajouter de nouvelles lignes pour les données filtrées
         event.detail.forEach(data => {
-            var row = dataTable.insertRow();
+            var row = dataTableBody.insertRow();
             row.id = 'row-' + data['ASSET_UNIT_NAME'];
             var nameCell = row.insertCell();
             var projectCell = row.insertCell();

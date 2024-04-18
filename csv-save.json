@@ -23382,6 +23382,24 @@
     "ASSET_LOCATION_GPS-LATITUDE": 48.10884
   },
   {
+    "ASSET_UNIT_ID": "ASFR231499",
+    "ASSET_UNIT_NAME": "GRTgaz GOCO2 Grand Ouest - CO2 transmission grid",
+    "ASSET_UNIT_PROJECT": "GOCO2",
+    "ASSET_STATUS_ACTIVITY": "active",
+    "ASSET_STATUS_ACTIVITY_ACCURACY": "reported",
+    "ASSET_VALUECHAIN_SEGMENT2": "junction/collection pipeline",
+    "ASSET_STATUS_LIFECYCLE1": "development",
+    "ASSET_STATUS_LIFECYCLE_ACCURACY": "",
+    "ASSET_OWNERSHIP_PROMOTER": "GRTgaz",
+    "ASSET_UNIT_SCOPE": "",
+    "ASSET_CAPACITY_YEAR": "",
+    "ASSET_CAPACITY_YEAR_ACCURACY": "",
+    "ASSET_CARBON_INTENSITY": "",
+    "ASSET_LOCATION_GPS-ACCURACY": "-",
+    "ASSET_LOCATION_GPS-LONGITUDE": "-",
+    "ASSET_LOCATION_GPS-LATITUDE": "-"
+  },
+  {
     "ASSET_UNIT_ID": "ASFR231500",
     "ASSET_UNIT_NAME": "GOCO2 Grand Ouest Total units - CO2 capture units",
     "ASSET_UNIT_PROJECT": "GOCO2",

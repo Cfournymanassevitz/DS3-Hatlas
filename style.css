@@ -2,7 +2,7 @@
     height: 500px;
     width: 80%;
     display: flex;
-    margin: 20 auto; 
+    margin: 10rem 10rem 10rem 10rem;
 }
 
 .custom-popup .leaflet-popup-content {
