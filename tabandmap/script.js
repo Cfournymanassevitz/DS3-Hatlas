@@ -1,6 +1,6 @@
 // script.js
 import { Map } from './map.js';
-import { dataTable, filter } from '../tab.js';
+import { dataTable, filter } from './tab.js';
 import { fetchData } from './data.js';
 import { handleOverlayAdd } from './events.js';
 

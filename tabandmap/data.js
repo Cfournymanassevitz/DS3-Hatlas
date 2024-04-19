@@ -1,6 +1,6 @@
 // data.js
 export function fetchData(map) {
-    fetch('csvjson.json')
+    fetch('../data/csvjson.json')
         .then(response => response.json())
         .then(json => {
             json.forEach(data => {
