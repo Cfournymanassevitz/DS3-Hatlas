@@ -107,27 +107,17 @@ export class Map {
                 break;
         }
     }
-    filterMarkers(segment) {
+    filterMarkers(segments) {
         let filteredData = this.markersData.filter(data => {
             let dataSegment = data['ASSET_VALUECHAIN_SEGMENT2'].toLowerCase();
-            switch (segment) {
-                case 'production':
-                    return dataSegment === 'production';
-                case 'capture':
-                    return dataSegment === 'capture';
-                case 'conversion':
-                    return dataSegment === 'conversion';
-                case 'grid injection':
-                case 'service pipeline':
-                    return dataSegment === 'grid injection' || dataSegment === 'service pipeline';
-                case 'refueling':
-                    return dataSegment === 'refueling';
-                case 'end use':
-                    return dataSegment === 'end use';
-                case 'Offtake (others)':
-                default:
-                    // Inclure tous les segments qui ne sont pas explicitement listés
-                    return dataSegment !== 'production' && dataSegment !== 'capture' && dataSegment !== 'conversion' && dataSegment !== 'grid injection' && dataSegment !== 'service pipeline' && dataSegment !== 'refueling' && dataSegment !== 'end use';
+            // Vérifie si le segment de l'élément de données est dans le tableau des segments sélectionnés
+            if (segments.includes(dataSegment)) {
+                return true;
+            } else if (segments.includes('Offtake (others)')) {
+                // Si 'Offtake (others)' est sélectionné, inclure tous les segments qui ne sont pas explicitement listés
+                return dataSegment !== 'production' && dataSegment !== 'capture' && dataSegment !== 'conversion' && dataSegment !== 'grid injection' && dataSegment !== 'service pipeline' && dataSegment !== 'refueling' && dataSegment !== 'end use';
+            } else {
+                return false;
             }
         });
         let event = new CustomEvent('filter', { detail: filteredData });
