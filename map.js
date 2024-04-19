@@ -110,12 +110,24 @@ export class Map {
     filterMarkers(segment) {
         let filteredData = this.markersData.filter(data => {
             let dataSegment = data['ASSET_VALUECHAIN_SEGMENT2'].toLowerCase();
-            if (segment === 'Offtake (others)') {
-                // Filtrer les données pour les segments 'Offtake (Mobility)' et 'Offtake (others)'
-                // faire le offtakeOthers car non fonctionnel
-                return dataSegment === ' '|| dataSegment === 'offtake (others);
-            } else {
-                return dataSegment === segment;
+            switch (segment) {
+                case 'production':
+                    return dataSegment === 'production';
+                case 'capture':
+                    return dataSegment === 'capture';
+                case 'conversion':
+                    return dataSegment === 'conversion';
+                case 'grid injection':
+                case 'service pipeline':
+                    return dataSegment === 'grid injection' || dataSegment === 'service pipeline';
+                case 'refueling':
+                    return dataSegment === 'refueling';
+                case 'end use':
+                    return dataSegment === 'end use';
+                case 'Offtake (others)':
+                default:
+                    // Inclure tous les segments qui ne sont pas explicitement listés
+                    return dataSegment !== 'production' && dataSegment !== 'capture' && dataSegment !== 'conversion' && dataSegment !== 'grid injection' && dataSegment !== 'service pipeline' && dataSegment !== 'refueling' && dataSegment !== 'end use';
             }
         });
         let event = new CustomEvent('filter', { detail: filteredData });
