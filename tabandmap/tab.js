@@ -7,9 +7,12 @@ export function filter(event) {
     while (dataTableBody.rows.length > 0) {
         dataTableBody.deleteRow(0);
     }
+    // console.log(event.detail)
 
     // Ajouter de nouvelles lignes pour les données filtrées
     event.detail.forEach(data => {
+
+
         var row = dataTableBody.insertRow();
         row.id = 'row-' + data['ASSET_UNIT_NAME'];
         var nameCell = row.insertCell();

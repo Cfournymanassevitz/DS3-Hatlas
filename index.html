@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Carte des villes de France</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-        
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="map"></div>
+<head>
+  <title>Carte des villes de France</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <div class="tableau">
-      <!-- Dans votre fichier HTML -->
-      <table id="data-table">
-        <thead>
-        <tr>
-          <th>ASSET_UNIT_NAME</th>
-          <th>ASSET_UNIT_PROJECT</th>
-          <th>ASSET_STATUS_ACTIVITY</th>
-          <th> ASSET_VALUECHAIN_SEGMENT2 </th>
-          <th>ASSET_STATUS_LIFECYCLE1</th>
-          <th>ASSET_OWNERSHIP_PROMOTER</th>
-          <th>ASSET_UNIT_SCOPE</th>
-          <th>ASSET_CAPACITY_YEAR  </th>
-          <th>ASSET_CARBON_INTENSITY</th>
-          <th>ASSET_LOCATION_GPS-ACCURACY</th>
-          <!-- Ajoutez d'autres colonnes selon vos données -->
-        </tr>
-        </thead>
-        <tbody id="data-table-body">
-        <!-- Les lignes de données seront ajoutées ici par JavaScript -->
-        </tbody>
-    </table>
-    </div>
-    <script type="module" src="tabandmap/script.js"></script>
-  </body>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="map"></div>
+
+<div class="tableau">
+  <!-- Dans votre fichier HTML -->
+  <table id="data-table">
+    <thead>
+    <tr>
+      <th>ASSET_UNIT_NAME</th>
+      <th>ASSET_UNIT_PROJECT</th>
+      <th>ASSET_STATUS_ACTIVITY</th>
+      <th> ASSET_VALUECHAIN_SEGMENT2 </th>
+      <th>ASSET_STATUS_LIFECYCLE1</th>
+      <th>ASSET_OWNERSHIP_PROMOTER</th>
+      <th>ASSET_UNIT_SCOPE</th>
+      <th>ASSET_CAPACITY_YEAR  </th>
+      <th>ASSET_CARBON_INTENSITY</th>
+      <th>ASSET_LOCATION_GPS-ACCURACY</th>
+      <!-- Ajoutez d'autres colonnes selon vos données -->
+    </tr>
+    </thead>
+    <tbody id="data-table-body">
+    <!-- Les lignes de données seront ajoutées ici par JavaScript -->
+    </tbody>
+  </table>
+</div>
+<script type="module" src="tabandmap/script.js"></script>
+</body>
 </html>

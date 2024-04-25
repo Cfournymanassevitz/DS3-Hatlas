@@ -108,6 +108,7 @@ export class Map {
         }
     }
     filterMarkers(segments) {
+        console.log(segments)
         let filteredData = this.markersData.filter(data => {
             let dataSegment = data['ASSET_VALUECHAIN_SEGMENT2'].toLowerCase();
             // Vérifie si le segment de l'élément de données est dans le tableau des segments sélectionnés
