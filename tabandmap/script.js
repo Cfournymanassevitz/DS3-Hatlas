@@ -12,4 +12,5 @@ document.addEventListener('DOMContentLoaded', function () {
     handleOverlayRemove(map)
 
     document.addEventListener('filter', filter);
+
 });
